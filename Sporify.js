@@ -3,8 +3,7 @@ roomLogs = $.grep(Array.from(document.querySelectorAll('div')), function(e){retu
 element = document.createElement('div');
 element.innerHTML = $('html').html();
 // While we haven't hurt ourselves from schrody
-//while (!roomLogs[0].innerText.trim().match("^SchrodingerScratchLog"))
-for (var i = 0; i < 10; i++)
+while (!roomLogs[0].innerText.trim().match("^SchrodingerScratchLog"))
 {
 	// If we can drop something, do that
 	dropCat = Array.from(element.querySelectorAll('a')).find(el => ~el.href.indexOf("DROP_OBJECT"))
@@ -18,7 +17,7 @@ for (var i = 0; i < 10; i++)
 			dataType: "text",
 			success: function(t)
 			{
-				//console.log(t);
+				// We use element to host the new page that comes back
 				element.innerHTML = t;
 			}
 		});
@@ -36,7 +35,7 @@ for (var i = 0; i < 10; i++)
 			dataType: "text",
 			success: function(t)
 			{
-				//console.log(t);
+				// We use element to host the new page that comes back
 				element.innerHTML = t;
 			}
 		});
